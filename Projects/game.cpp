@@ -1,6 +1,9 @@
 #include <iostream>
+#include "startup.cpp"
 using namespace std;
 
 int main(){
-  return 0;
+  Start s;
+    s.display();
+    return 0;
 }
