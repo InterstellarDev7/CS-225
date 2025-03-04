@@ -1,5 +1,5 @@
 #include <iostream>
-#include "startup.cpp"
+#include "startup.h"
 using namespace std;
 
 int main(){
