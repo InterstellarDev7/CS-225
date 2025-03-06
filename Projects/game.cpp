@@ -4,6 +4,6 @@ using namespace std;
 
 int main(){
   Start s;
-    s.display();
+    s.displayStart();
     return 0;
 }
