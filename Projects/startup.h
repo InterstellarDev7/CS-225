@@ -12,10 +12,10 @@ class Start {
             cout<<"What is your last name? "<<endl;
             cin>>lastName;
         }
-        void display();
+        void displayStart();
 };
 
-void Start::display(){
+void Start::displayStart(){
     cout<<"Welcome! You have decided to play the:\n**** International Space Station Survival Game!****"<<endl;
     this_thread::sleep_for(chrono::seconds(2));
     cout<<"\nYou are Commander "<<lastName<<" aboard the ISS. For the past couple months you have been"<<
