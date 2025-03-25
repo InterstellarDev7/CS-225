@@ -21,8 +21,9 @@ void fixLeak() {
     cout << "Go to fix the communication and come back!" << endl;
     
     
-    //redirect to fix comms first
+    /*redirect to fix comms first
     fixCommunication();
+    */
     
     // return to fixing the leak -> mini game
     cout << "\n\nNow communication is fixed." << endl;
