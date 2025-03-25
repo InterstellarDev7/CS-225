@@ -3,8 +3,8 @@
 * Author: Hyeonjin Park
 * Purpose: Fixing power
 *******************************************************************************/
-#include "Choices.h"
-#include "Person.h"
+#include "choices.h"
+#include "person.h"
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
