@@ -2,7 +2,7 @@
 * File:   communication.cpp
 * Author:   Devin Trujillo
 * Purpose:  mini game to fix comms problem
-* resources: YouTube (Kenny Yip Coding)
+* resources: Youtube (Kenny Yip Coding)
 *******************************************************************************/
 #include <iostream>
 #include <string>
@@ -30,9 +30,12 @@ class fixComms{
 };
 
 fixComms::fixComms(){
-    cout << "***********************************************************************************************************" << endl;
-    cout << "Your challenge to fix Communications is to play a game of Tic-Tac-Toe against the ISS computer and WIN." << endl;
-    cout << "***********************************************************************************************************" << endl;
+    cout << "You decided to fix communications." <<endl;
+    cout << "To fix communications, you need to complete the mini game! "<<endl;
+    cout << "Let's start the game!\n" <<endl;
+    cout << "*********Welcome to Tic-Tac-Toe*********" <<endl;
+    cout << "Your challenge to fix Communications is to play a game\nof Tic-Tac-Toe against the ISS computer and WIN."<<endl;
+    cout << "*********************************************" << endl << endl;
     resetBoard(); // Initialize board
 }
 
@@ -79,8 +82,8 @@ bool fixComms::playerMove(int move, char sym) {
 }
 
 /*
-This function checks rows/columns/diagonals for three symbols in a row/column/diagonal.
-This then will equal a win for either computer or player, returning true. If there are none, then
+This function checks, rows/columns/diagonals for three symbols in a row/column/diagonal.
+This then will equal a win for either computer or player, returning true. If there are none then
 function returns false = no wins.
 */
 bool fixComms::checkWin(char sym) {
@@ -164,7 +167,7 @@ void fixComms::playTicTacToe(){
             cout << "Computer's turn..." << endl;
             computerMove(); //Computer makes move
 
-            if (checkWin(computer)) { //Checking computer moves for a win and then restarts if one is found
+            if (checkWin(computer)) { //Checking computer moves for a win and the restarts if one is found
                 gameBoard();
                 cout << "The computer WINS! Restarting the game..." << endl;
                 break; //Restarts game 
