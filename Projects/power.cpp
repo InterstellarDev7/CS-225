@@ -4,7 +4,8 @@
 * Purpose: Fixing power
 *******************************************************************************/
 
-
+#include <choices.h>
+#inlucde <person.h>
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
