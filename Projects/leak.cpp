@@ -82,9 +82,3 @@ void fixLeak() {
         }
     }
 }
-
-int main() {
-    fixLeak();
-    return 0;
-}
-    
