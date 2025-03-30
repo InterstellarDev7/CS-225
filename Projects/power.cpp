@@ -5,7 +5,7 @@
 *******************************************************************************/
 
 #include <choices.h>
-#inlucde <person.h>
+#include <person.h>
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
