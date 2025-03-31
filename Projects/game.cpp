@@ -7,9 +7,11 @@ int main(){
 /*Startup.h*/
     Start s;
     s.displayStart();
-/*person.h*/
+    
+/*person.h*/ /* This would be in choices.h*/
     UserStatus player(100, 100, 100); //Sets initial status values
     player.displayStatus(); //Displays initial status values
+    
     char choice; // Char for user choice option
     while (true) { // While a user still has health
         cout << "choice a/b/c: "; //Prompt choice to choose
