@@ -69,6 +69,12 @@ void fixPower() {
 				} else {
 					cout << "Congratulations! You guessed the number in " << attempt << " attempts!" << endl;
 					cout << "Power restored successfully!\n";
+					cout << "      *****     " << endl;
+					cout << "    *       *" << endl;
+					cout << "  *   POWER   *" << endl;
+					cout << "  *     ON    *" << endl;
+					cout << "    *       *  " << endl;
+					cout << "      *****" << endl;
 					return;
 				}
 			}
