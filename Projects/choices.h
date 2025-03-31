@@ -1,10 +1,10 @@
 #include <iostream>
-#include <person.h>
+#include "person.h"
 
-#include <power.cpp>
-#include <communication.cpp>
-#include <leak.cpp>
-#include <randomTasks.cpp>
+#include "power.cpp"
+#include "communication.cpp"
+#include "leak.cpp"
+#include "randomTasks.cpp"
 using namespace std;
 
 class Choices{
