@@ -71,8 +71,8 @@ void fixPower() {
 					cout << "Power restored successfully!\n";
 					cout << "      *****     " << endl;
 					cout << "    *       *" << endl;
-					cout << "  *   POWER   *" << endl;
-					cout << "  *     ON    *" << endl;
+					cout << "   *  POWER  *" << endl;
+					cout << "   *    ON   *" << endl;
 					cout << "    *       *  " << endl;
 					cout << "      *****" << endl;
 					return;
