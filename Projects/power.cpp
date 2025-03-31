@@ -10,6 +10,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <limits>
+#include <string>
 
 using namespace std;
 
