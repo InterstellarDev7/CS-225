@@ -139,12 +139,12 @@ void fixComms::playTicTacToe(){
                 gameBoard();
                 cout << "Communications restored successfully!" << endl;
                 cout << "      ******    " << endl;
-				cout << "    *        *  " << endl;
-			    cout << "   *  COMMS   * " << endl;
-				cout << "   * RESTORED * " << endl;
-				cout << "    *        *  " << endl;
-				cout << "      ******    " << endl;
-				cout<<"\n";
+		cout << "    *        *  " << endl;
+		cout << "   *  COMMS   * " << endl;
+		cout << "   * RESTORED * " << endl;
+		cout << "    *        *  " << endl;
+		cout << "      ******    " << endl;
+		cout<<"\n";
                 return; //Game ends when player wins
             }
 
