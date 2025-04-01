@@ -29,6 +29,11 @@ class Choices{
             cin >> choice; //Take user input
             return choice; // Return the user's corrected input
         }
+
+        /* Overloaded ++ operator */
+        void operator ++ () {
+            level++; // Increment level
+        }
         
         /* Function to display and choose a choice */
         void selectChoice(UserStatus &player){ // Function to select a choice
@@ -41,7 +46,7 @@ class Choices{
                         if(choice == 'a' || choice == 'b'|| choice == 'c' || choice == 'd' || choice == 'e' || choice == 'f'){ // If a choice is chosen
                             if(choice == 'a'){ // If the choice is to fix power
                                 fixPower(); // Call power mini game
-                                level = 2; // Increment level
+                                level++; // Increment level
                             } else if(choice == 'b'){ // If the choice is to fix communications
                                 cout << "You can not fix communications without power yet!" << endl;
                             } else if(choice == 'c'){ // If the choice is to fix leak
@@ -68,7 +73,7 @@ class Choices{
                             if(choice == 'a'){ // If the choice is to fix communications
                                 cout << "You turn on the main power switch inside the ISS." << endl;
                                 startCommunicationMiniGame();// Call communications mini game
-                                level = 3; // Increment level
+                                level++;; // Increment level
                             } else if(choice == 'b'){ // If the choice is to fix leak
                                 cout << "You can not fix the leak without communications!" << endl;
                             } else if(choice == 'c'){ // If the choice is to scroll on YouTube
@@ -91,7 +96,7 @@ class Choices{
                         if(choice == 'a' || choice == 'b'|| choice == 'c' || choice == 'd'){
                             if(choice == 'a'){ // If the choice is to fix leak
                                 cout<<"You call JPL and they give you instructions on how to fix the leak."<<endl;
-                                level = 4; // Increment level
+                                level++;; // Increment level
                             } else if(choice == 'b'){ // If the choice is to video call family
                                 familyPicture(); // Call video call family function
                             } else if(choice == 'c'){ // If the choice is to livestream on Twitch
