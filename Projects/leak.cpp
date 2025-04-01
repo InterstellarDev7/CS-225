@@ -23,7 +23,7 @@ void fixLeak(){
     srand(time(0));
     
     try{
-        while (true){
+        while(true){
             cout << "Enter your choice ('rock', 'scissors', or 'paper' => ";
             cin >> userC;
             

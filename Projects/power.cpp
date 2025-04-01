@@ -119,7 +119,7 @@ void fixPower(){
 					}
 
 				}
-				catch (const string& msg){
+				catch(const string& msg){
 					cout << msg << endl;
 					cin.clear();
 					cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -127,7 +127,7 @@ void fixPower(){
 				}
 			}
 		}
-		catch (const string& msg){
+		catch(const string& msg){
 			cout << msg << endl;
 			cin.clear();
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

@@ -28,7 +28,7 @@ class Choices{
         /* Function to write a congratulations certificate to a file */
     void writeCertificate(){
         ofstream outFile("Congratulations_Certificate.txt"); // Create and open a file
-        if (outFile.is_open()) {
+        if(outFile.is_open()){}
             outFile << "***************************************\n";
             outFile << "          CONGRATULATIONS!             \n";
             outFile << "***************************************\n";
@@ -53,7 +53,7 @@ class Choices{
         }
 
         /* Overloaded ++ operator */
-        void operator ++ (){
+        void operator ++(){
             level++; // Increment level
         }
         

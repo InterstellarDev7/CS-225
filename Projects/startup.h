@@ -28,7 +28,7 @@ void Start::displayStart(){
     " The impact cut off communication from JPL, disabled power systems, and caused a small leak somewhere in the piping."
     <<"\nOxygen is slowly depleting… "<<endl;
     this_thread::sleep_for(chrono::seconds(8));
-    cout<<"\nYYour Hunger and Oxygen can decrease by for every choice you make.\nChoose wisely..."<<endl;
+    cout<<"\nYour Hunger and Oxygen can decrease by for every choice you make.\nChoose wisely..."<<endl;
     this_thread::sleep_for(chrono::seconds(5));
 }
 #endif
