@@ -53,8 +53,8 @@ Once Hunger reaches or gets below 30, Hunger decreases by 10
 Once Health reaches zero (return false), game ends and user "dies".
 */
 bool UserStatus::makeChoice() {
-    userHunger = max(0, userHunger - 2); // Max keeps stats from going below zero, decreases by 2
-    userOxygen = max(0, userOxygen - 2); // Max keeps stats from going below zero, decreases by 2
+    userHunger = max(0, userHunger - 5); // Max keeps stats from going below zero, decreases by 2
+    userOxygen = max(0, userOxygen - 5); // Max keeps stats from going below zero, decreases by 2
 
     if (userOxygen <= 50) {
         userHealth = max(0, userHealth - 15); // Max keeps stats from going below zero, decreases by 15
