@@ -2,6 +2,7 @@
 #define CHOICES_H 
 
 #include <iostream>
+#include <fstream>
 #include "person.h"
 #include "power.h"
 #include "communication.h"
@@ -23,6 +24,26 @@ class Choices{
         ~Choices(){
             cout << "You can not make any choices anymore." << endl;
         }
+
+        /* Function to write a congratulations certificate to a file */
+    void writeCertificate() {
+        ofstream outFile("Congratulations_Certificate.txt"); // Create and open a file
+        if (outFile.is_open()) {
+            outFile << "***************************************\n";
+            outFile << "          CONGRATULATIONS!             \n";
+            outFile << "***************************************\n";
+            outFile << "You have successfully completed the game!\n";
+            outFile << "Your hard work and determination have\n";
+            outFile << "saved the ISS and its crew. Great job!\n";
+            outFile << "***************************************\n";
+            outFile << "          CERTIFICATE OF SUCCESS       \n";
+            outFile << "***************************************\n";
+            outFile.close(); // Close the file
+            cout << "Congratulations! A certificate has been written to 'Congratulations_Certificate.txt' file.\n";
+        } else {
+            cout << "Error: Unable to write the certificate to a file.\n";
+        }
+    }
         
         char errorHandling(){
             cout << "Invalid choice. Please enter 'a' 'b' 'c' 'd' 'e' or 'f'." << endl; //Error message and reprompt
@@ -117,6 +138,8 @@ class Choices{
                         if(choice == 'a' || choice == 'b'|| choice == 'c' || choice == 'd'){
                             if(choice == 'a'){ // If the choice is to fix leak
                                 fixLeak(); // Call leak mini game
+                                writeCertificate(); // Write the congratulations certificate
+                                cout << "You have successfully completed the game! Well done!" << endl;
                                 return; // END GAME
                             } else if(choice == 'b'){ // If the choice is to make a TikTok
                                 makeTikTok(); // Call make TikTok function
