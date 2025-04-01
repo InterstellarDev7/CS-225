@@ -29,5 +29,6 @@ void Start::displayStart(){
     <<"\nOxygen is slowly depleting… "<<endl;
     this_thread::sleep_for(chrono::seconds(8));
     cout<<"\nYour Hunger and Oxygen will decrease by 5 points for every choice you make.\nChoose wisely..."<<endl;
+    this_thread::sleep_for(chrono::seconds(5));
 }
 #endif
