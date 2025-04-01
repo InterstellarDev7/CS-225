@@ -1,17 +1,20 @@
 #include <iostream>
 #include "startup.h"
+#include "choices.h"
 #include "person.h"
 using namespace std;
 
 int main(){
-/*Startup.h*/
+    /*Startup.h*/
     Start s;
     s.displayStart();
     
-/*person.h*/ /* This would be in choices.h*/
-    UserStatus player(100, 100, 100); //Sets initial status values
-    player.displayStatus(); //Displays initial status values
-    
+    /*person.h*/ 
+    UserStatus player(100, 100, 100); // Sets initial status values
 
+    /*choices.h*/
+    Choices playerChoices(player);  // Pass the 'player' (UserStatus object) to the Choices constructor
+    playerChoices.selectChoice(player);  // Calls the game loop for selecting actions
+    
     return 0;
 }
