@@ -56,19 +56,20 @@ bool UserStatus::makeChoice() {
     userHunger = max(0, userHunger - 5); // Max keeps stats from going below zero, decreases by 2
     userOxygen = max(0, userOxygen - 5); // Max keeps stats from going below zero, decreases by 2
 
-    if (userOxygen <= 50) {
-        userHealth = max(0, userHealth - 15); // Max keeps stats from going below zero, decreases by 15
-        cout << "You have less than 50 percent Oxygen left! Health now drops by 15." << endl;
+    if (userOxygen == 45){
+        cout<<"You have 50 percent Oxygen left! Health now drops by 10." << endl;
+    } else if (userOxygen <= 45) {
+        userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 15
     }
 
-    if (userHunger <= 30) {
+    if (userHunger == 35) {
+        cout << "You have 40 percent Hunger left! Health now drops by 10." << endl;
+    } else if(userHunger <= 35){ 
         userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 10
-        cout << "You have less than 40 percent Hunger left! Health now drops by 10." << endl;
     }
 
     if (userHealth == 0) {
-        displayStatus();
-        cout << "You have run out of health :(" << endl;
+        cout << "Your Health is too low.\nYou can no longer move and darkness takes over..." << endl;
         return false; // No more health means no more choices can be made, game ends
     }
     cout<<"\n";
