@@ -92,6 +92,7 @@ public:
                     else{
                         choice = errorHandling();
                     }
+                    this_thread::sleep_for(chrono::seconds(8));
                     player.displayStatus();
                     break;
 
@@ -119,6 +120,7 @@ public:
                     else{
                         choice = errorHandling();
                     }
+                    this_thread::sleep_for(chrono::seconds(8));
                     player.displayStatus();
                     break;
 
@@ -142,6 +144,7 @@ public:
                     else{
                         choice = errorHandling();
                     }
+                    this_thread::sleep_for(chrono::seconds(8));
                     player.displayStatus();
                     break;
 
@@ -168,6 +171,7 @@ public:
                     else{
                         choice = errorHandling();
                     }
+                    this_thread::sleep_for(chrono::seconds(8));
                     player.displayStatus();
                     break;
             } // End of switch statement
