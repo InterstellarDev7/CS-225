@@ -28,7 +28,6 @@ void Start::displayStart(){
     " The impact cut off communication from JPL, disabled power systems, and caused a small leak somewhere in the piping."
     <<"\nOxygen is slowly depleting… "<<endl;
     this_thread::sleep_for(chrono::seconds(8));
-    cout<<"\nWith only 5 hours of time, you must complete your tasks. The fate of the mission, your life, and the ISS"
-    <<" are in your hands. Decide wisely, time is running out.\n"<<endl;
+    cout<<"\nYour Hunger and Oxygen will decrease by 5 points for every choice you make.\nChoose wisely..."<<endl;
 }
 #endif
