@@ -13,7 +13,7 @@ int main(){
     UserStatus player(100, 100, 100); // Sets initial status values
 
     /*choices.h*/
-    Choices playerChoices(player);  // Pass the 'player' (UserStatus object) to the Choices constructor
+    Choices playerChoices(player);  // Pass the player to the Choices constructor
     playerChoices.selectChoice(player);  // Calls the game loop for selecting actions
     
     return 0;
