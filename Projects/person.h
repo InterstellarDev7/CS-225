@@ -69,6 +69,7 @@ bool UserStatus::makeChoice() {
     }
 
     if (userHealth == 0) {
+        displayStatus();
         cout << "Your Health is too low.\nYou can no longer move and darkness takes over..." << endl;
         return false; // No more health means no more choices can be made, game ends
     }
