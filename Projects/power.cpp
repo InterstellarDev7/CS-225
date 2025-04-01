@@ -90,7 +90,7 @@ void fixPower(){
 				    choice = tolower(choice);
 				    
 					if(choice == 'n'){
-						cout << "Are you sure? If the power still remains off, you will eventually run out of oxygen and die.\n";
+						cout << "\nAre you sure? If the power still remains off, you will eventually run out of oxygen and die.\n";
 						cout << "Think carefully and choose again. (y / n) ";
 
 						if(!(cin >> choice)){
