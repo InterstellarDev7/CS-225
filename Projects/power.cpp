@@ -3,15 +3,12 @@
 * Author: Hyeonjin Park
 * Purpose: Fixing power
 *******************************************************************************/
-
-#include <choices.h>
-#include <person.h>
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
 #include <limits>
 #include <string>
-
+#include "power.h"
 using namespace std;
 
 void fixPower() {
@@ -22,13 +19,10 @@ void fixPower() {
 	cout << "To fix the power, you need to complete the mini game! ";
 	cout << "Let's start the game!" << endl << endl;
 
-
-
 	/*
 	To fix the power, user has to complete the mini game
 	If user fail, program asks if user wants to try again
 	*/
-
 	while (true) {
 		try {
 			// Start the mini game to fix the power
@@ -70,19 +64,19 @@ void fixPower() {
 				} else {
 					cout << "Congratulations! You guessed the number in " << attempt << " attempts!" << endl;
 					cout << "Power restored successfully!\n";
-					cout << "      *****     " << endl;
-					cout << "    *       *" << endl;
-					cout << "   *  POWER  *" << endl;
-					cout << "   *    ON   *" << endl;
+					cout << "      *****    " << endl;
 					cout << "    *       *  " << endl;
-					cout << "      *****" << endl;
+					cout << "   *  POWER  * " << endl;
+					cout << "   *   ON    * " << endl;
+					cout << "    *       *  " << endl;
+					cout << "      *****    " << endl;
+					cout<<"\n";
 					return;
 				}
 			}
 
 			cout << "You've used all your attempts... Power restoration failed...\n";
 			cout << "Oxygen is slowly depleting...\n";
-
 			cout << "You still need to fix the power." << endl;
 			//Ask user if they want to retry
 			char choice;
