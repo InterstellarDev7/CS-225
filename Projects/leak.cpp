@@ -14,8 +14,9 @@ using namespace std;
 void fixLeak(){
     cout << "To fix the leak, you need to complete the mini game!" << endl;
     cout << "Let's start the game!" << endl;
-    cout << "\n*********Welcome to Rock, Scissors, Paper*********" << endl;
-    cout << "To fix the leak, you must win a game.\n" << endl;
+    cout << "*********Welcome to Rock, Scissors, Paper*********" << endl;
+    cout << "To fix the leak, you must win a game." << endl;
+    cout << "**************************************************" << endl;
     string threeChoice[3] = {"rock", "scissors", "paper"};
     string userC;
     string computerC;
