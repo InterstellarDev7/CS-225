@@ -103,12 +103,6 @@ void fixPower(){
 							cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 							throw MSG2;
 						}
-						choice = tolower(choice);
-						if(choice == 'n'){
-							cout << "You decided not to fix the power. Oxygen is slowly depleting...\n";
-							return;
-							// return to choice selection -> add later
-						}
 					}
 					else if(choice == 'Y' || choice == 'y'){
 						cout << "Great! Start the game again....." << endl << endl;
