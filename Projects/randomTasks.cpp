@@ -4,8 +4,7 @@
 * Purpose:  Functions for random tasks in the game.
 *******************************************************************************/
 #include <iostream>
-#include "choices.h"
-#include "person.h"
+#include "randomTasks.h"
 using namespace std;
 
 /* Functions to waste time during the beginning */
@@ -18,8 +17,7 @@ using namespace std;
 
     // Player eats food
     void eatFood(){
-        cout << "Because of stress, you decide to eat 15 astronaut icecreams and now throwing up." << endl;
-        cout << "Now you're feeling super exhausted and sick, uh-oh..." << endl;
+        cout << "Because of stress, you decide to eat 15 astronaut icecream :)" << endl;
     }
 
     // Player reads a book
