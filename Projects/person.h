@@ -31,6 +31,14 @@ public:
 
     void displayStatus();
     bool makeChoice();
+
+    // Overload the << operator for easy output
+    friend ostream& operator<<(ostream& os, const UserStatus& status) {
+        os << "Hunger: " << status.userHunger
+           << ", Oxygen: " << status.userOxygen
+           << ", Health: " << status.userHealth;
+        return os;
+    }
 };
 
 /*

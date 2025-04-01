@@ -21,7 +21,7 @@ class Choices{
 
         // Choices destructor
         ~Choices(){
-            cout << "Congratulations, you fixed the ISS and are returning home!" << endl;
+            cout << "You can not make any choices anymore." << endl;
         }
         
         char errorHandling(){
