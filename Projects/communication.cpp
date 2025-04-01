@@ -8,26 +8,8 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-//#include "choices.h"
-//#include "person.h"
+#include "communication.h"
 using namespace std;
-
-class fixComms{
-    private:
-        char board[3][3]; //creates a 3x3 array
-        char player = 'X'; //sets player symbol
-        char computer = 'O'; //sets computer symbol
-    public:
-        fixComms();
-        void resetBoard();
-        void gameBoard();
-        bool playerMove(int move, char sym);
-        bool checkWin(char sym);
-        bool checkTie();
-        void computerMove();
-        void playTicTacToe();
-    
-};
 
 fixComms::fixComms(){
     cout << "You decided to fix communications." <<endl;
@@ -154,7 +136,14 @@ void fixComms::playTicTacToe(){
 
             if (checkWin(player)) { //Checking player move for a win
                 gameBoard();
-                cout << "You Have Succeeded in Restoring the Communications!" << endl;
+                cout << "Communications restored successfully!" << endl;
+                cout << "      ******    " << endl;
+				cout << "    *        *  " << endl;
+			    cout << "   *  COMMS   * " << endl;
+				cout << "   * RESTORED * " << endl;
+				cout << "    *        *  " << endl;
+				cout << "      ******    " << endl;
+				cout<<"\n";
                 return; //Game ends when player wins
             }
 
@@ -182,9 +171,7 @@ void fixComms::playTicTacToe(){
     }
 }
 
-int main(){ 
-    fixComms fc;
-    fc.playTicTacToe();
-
-    return 0;
+void startCommunicationMiniGame() {
+    fixComms comms;
+    comms.playTicTacToe();
 }
