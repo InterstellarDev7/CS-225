@@ -16,7 +16,7 @@ void fixLeak(){
     cout << "Let's start the game!" << endl;
     cout << "*********Welcome to Rock, Scissors, Paper*********" << endl;
     cout << "To fix the leak, you must win a game." << endl;
-    cout << "**************************************************" << endl;
+    cout << "**************************************************\n" << endl;
     string threeChoice[3] = {"rock", "scissors", "paper"};
     string userC;
     string computerC;
