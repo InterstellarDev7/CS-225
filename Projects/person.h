@@ -1,8 +1,3 @@
-/****************************************************************************
-* File:   person.h
-* Author:   Devin Trujillo
-* Purpose:  User Status: Health, Oxygen, and Hunger
-*******************************************************************************/
 #ifndef PERSON_H 
 #define PERSON_H 
 
@@ -10,24 +5,42 @@
 #include <cstring>
 using namespace std;
 
-class UserStatus{
+class GameStats {
 private:
-    int userHunger;
-    int userOxygen;
-    int userHealth;
+    int hunger;
+    int oxygen;
+    int health;
 
 public:
-    UserStatus(int hu, int ox, int he) : userHunger(hu), userOxygen(ox), userHealth(he){} // Constructor sets initial values
+    GameStats(int hu, int ox, int he) : hunger(hu), oxygen(ox), health(he) {}
 
-    // Getter functions
-    int getUserHunger() const { return userHunger; }
-    int getUserOxygen() const { return userOxygen; }
-    int getUserHealth() const { return userHealth; }
+    // Getters
+    int getHunger() const { return hunger; }
+    int getOxygen() const { return oxygen; }
+    int getHealth() const { return health; }
 
-    // Setter functions
-    void setUserHunger(int hunger) { userHunger = hunger; }
-    void setUserOxygen(int oxygen) { userOxygen = oxygen; }
-    void setUserHealth(int health) { userHealth = health; }
+    // Setters
+    void setHunger(int hu) { hunger = max(0, hu); }
+    void setOxygen(int ox) { oxygen = max(0, ox); }
+    void setHealth(int he) { health = max(0, he); }
+};
+
+class UserStatus {
+private:
+    GameStats stats; //UserStatus has a GameStats object
+
+public:
+    UserStatus(int hu, int ox, int he) : stats(hu, ox, he) {}
+
+    // Getter functions for accessing stats 
+    int getUserHunger() const { return stats.getHunger(); }
+    int getUserOxygen() const { return stats.getOxygen(); }
+    int getUserHealth() const { return stats.getHealth(); }
+
+    // Setter functions for modifying stats
+    void setUserHunger(int hu) { stats.setHunger(hu); }
+    void setUserOxygen(int ox) { stats.setOxygen(ox); }
+    void setUserHealth(int he) { stats.setHealth(he); }
 
     void displayStatus();
     bool makeChoice();
@@ -35,46 +48,43 @@ public:
 
 /*
 Function: displayStatus()
-This function is used to display the Game Stats for user to see
+Displays the user's stats.
 */
 void UserStatus::displayStatus(){
     cout << "***************************************" << endl;
-    cout << "Game Stats: " << endl << "Hunger = " << userHunger << "\nOxygen = " << userOxygen
-         << "\nHealth = " << userHealth << endl;
+    cout << "Game Stats: " << endl 
+         << "Hunger = " << getUserHunger() 
+         << "\nOxygen = " << getUserOxygen()
+         << "\nHealth = " << getUserHealth() << endl;
     cout << "***************************************" << endl;
 }
 
 /*
 Function: makeChoice() 
-If user still has health (return true), This function decreases the Oxygen and Hunger Stats for 
-each choice the user makes.
-Once Oxygen reaches or gets below 50, Health decreases by 15
-Once Hunger reaches or gets below 30, Hunger decreases by 10
-Once Health reaches zero (return false), game ends and user "dies".
+Updates hunger, oxygen, and health as choices are made.
 */
 bool UserStatus::makeChoice(){
-    userHunger = max(0, userHunger - 5); // Max keeps stats from going below zero, decreases by 2
-    userOxygen = max(0, userOxygen - 5); // Max keeps stats from going below zero, decreases by 2
+    setUserHunger(getUserHunger() - 5);
+    setUserOxygen(getUserOxygen() - 5);
 
-    if(userOxygen == 45){
-        cout<<"You have 50 percent Oxygen left! Health now drops by 10." << endl;
-    }
-    else if(userOxygen <= 45){
-        userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 15
+    if (getUserOxygen() == 45) {
+        cout << "You have 50 percent Oxygen left! Health now drops by 10." << endl;
+    } else if (getUserOxygen() <= 45) {
+        setUserHealth(getUserHealth() - 10);
     }
 
-    if(userHunger == 35){
+    if (getUserHunger() == 35) {
         cout << "You have 40 percent Hunger left! Health now drops by 10." << endl;
-    }
-    else if(userHunger <= 35){ 
-        userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 10
+    } else if (getUserHunger() <= 35) {
+        setUserHealth(getUserHealth() - 10);
     }
 
-    if(userHealth == 0){
-        cout << "Your Health is too low.\nYou can no longer move and darkness takes over..." << endl;
-        return false; // No more health means no more choices can be made, game ends
+    if (getUserHealth() == 0) {
+        cout << "Your Health is too low. Darkness takes over...." << endl;
+        return false;
     }
-    cout<<"\n";
-    return true; // Still some health so more choices can be made
+    cout << "\n";
+    return true;
 }
+
 #endif
