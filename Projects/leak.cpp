@@ -23,9 +23,9 @@ void fixLeak(){
     
     srand(time(0));
     
-    try{
-        while(true){
-            cout << "Enter your choice ('rock', 'scissors', or 'paper' => ";
+    while (true){
+        try{
+            cout << "Enter your choice ('rock', 'scissors', or 'paper') => ";
             cin >> userC;
             
             const string ERROR = "ERROR: Invalid option. Try again...\n";
@@ -62,11 +62,10 @@ void fixLeak(){
             else{
                 cout << "You lost! Try one more time..." << endl;
             }
+        } catch(const string& error){
+            cout << error << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
-    }
-    catch(const string& error){
-        cout << error << endl;
-        cin.clear();
-        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 }
