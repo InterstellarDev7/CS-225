@@ -17,7 +17,7 @@ private:
     UserStatus &player; // Store reference to UserStatus object
 
     // Error handling function (fixes the missing function issue)
-    char errorHandling() {
+    char errorHandling(){
         cout << "Invalid input! Please enter a valid choice.\n";
         char newChoice;
         cin >> newChoice;
@@ -26,19 +26,19 @@ private:
 
 public:
     /* Constructor initializes user status */
-    Choices(UserStatus &playerRef) : player(playerRef) {
+    Choices(UserStatus &playerRef) : player(playerRef){
         player.displayStatus(); // Displays initial status values
     }
 
     // Destructor
-    ~Choices() {
+    ~Choices(){
         cout << "You can no longer make choices..." << endl;
     }
 
     /* Function to write a congratulations certificate */
-    void writeCertificate() {
+    void writeCertificate(){
         ofstream outFile("Congratulations_Certificate.txt"); // Create and open a file
-        if (outFile.is_open()) {
+        if(outFile.is_open()){
             outFile << "***************************************\n";
             outFile << "          CONGRATULATIONS!             \n";
             outFile << "***************************************\n";
@@ -50,39 +50,46 @@ public:
             outFile << "***************************************\n";
             outFile.close(); // Close the file
             cout << "Congratulations! A certificate has been written to 'Congratulations_Certificate.txt' file.\n";
-        } else {
+        }
+        else{
             cout << "Error writing to file!" << endl;
         }
     }
 
     /* Overloaded ++ operator */
-    void operator++() {
+    void operator++(){
         level++; // Increment level
     }
 
     /* Function to display and choose a choice */
-    void selectChoice() { // No need to pass player since it's stored
-        while (player.makeChoice() && level < 5) { // While user has health or game is not over
-            switch (level) {
+    void selectChoice(){ // No need to pass player since it's stored
+        while(player.makeChoice() && level < 5){ // While user has health or game is not over
+            switch(level){
                 case 1: // Beginning of the game
                     cout << "Choices\n(a) Fix power\n(b) Fix communications\n(c) Fix leak\n(d) Keep sleeping\n(e) Eat some food\n(f) Read a book\n";
                     cin >> choice;
 
-                    if (choice == 'a') {
+                    if(choice == 'a'){
                         fixPower();
                         level++;
-                    } else if (choice == 'b') {
+                    }
+                    else if(choice == 'b'){
                         cout << "You cannot fix communications without power yet!" << endl;
-                    } else if (choice == 'c') {
+                    }
+                    else if(choice == 'c'){
                         cout << "You cannot fix the leak yet!" << endl;
-                    } else if (choice == 'd') {
+                    }
+                    else if(choice == 'd'){
                         sleep();
-                    } else if (choice == 'e') {
+                    }
+                    else if(choice == 'e'){
                         eatFood();
                         player.setUserHunger(player.getUserHunger() + 10);  // Increase hunger by 10
-                    } else if (choice == 'f') {
+                    }
+                    else if(choice == 'f'){
                         readBook();
-                    } else {
+                    }
+                    else{
                         choice = errorHandling();
                     }
                     player.displayStatus();
@@ -92,19 +99,24 @@ public:
                     cout << "Choices\n(a) Fix communications\n(b) Fix leak\n(c) Scroll on YouTube\n(d) Listen to music\n(e) Watch a movie\n";
                     cin >> choice;
 
-                    if (choice == 'a') {
+                    if(choice == 'a'){
                         cout << "You turn on the main power switch inside the ISS." << endl;
                         startCommunicationMiniGame();
                         level++;
-                    } else if (choice == 'b') {
+                    }
+                    else if(choice == 'b'){
                         cout << "You cannot fix the leak without communications!" << endl;
-                    } else if (choice == 'c') {
+                    }
+                    else if(choice == 'c'){
                         scrollYouTube();
-                    } else if (choice == 'd') {
+                    }
+                    else if(choice == 'd'){
                         listenMusic();
-                    } else if (choice == 'e') {
+                    }
+                    else if(choice == 'e'){
                         watchMovie();
-                    } else {
+                    }
+                    else{
                         choice = errorHandling();
                     }
                     player.displayStatus();
@@ -114,16 +126,20 @@ public:
                     cout << "Choices\n(a) Call JPL\n(b) Video call your family\n(c) Livestream on Twitch\n(d) Post a tweet\n";
                     cin >> choice;
 
-                    if (choice == 'a') {
+                    if(choice == 'a'){
                         cout << "You call JPL and they give you instructions on how to fix the leak." << endl;
                         level++;
-                    } else if (choice == 'b') {
+                    }
+                    else if(choice == 'b'){
                         familyPicture();
-                    } else if (choice == 'c') {
+                    }
+                    else if(choice == 'c'){
                         liveStream();
-                    } else if (choice == 'd') {
+                    }
+                    else if(choice == 'd'){
                         tweet();
-                    } else {
+                    }
+                    else{
                         choice = errorHandling();
                     }
                     player.displayStatus();
@@ -133,19 +149,23 @@ public:
                     cout << "Choices\n(a) Fix leak\n(b) Make a TikTok\n(c) Eat a victory meal\n(d) Play around with the wrench\n";
                     cin >> choice;
 
-                    if (choice == 'a') {
+                    if(choice == 'a'){
                         fixLeak();
                         writeCertificate();
                         cout << "You have successfully completed the game! Well done!" << endl;
                         return; // END GAME
-                    } else if (choice == 'b') {
+                    }
+                    else if(choice == 'b'){
                         makeTikTok();
-                    } else if (choice == 'c') {
+                    }
+                    else if(choice == 'c'){
                         victoryMeal();
                         player.setUserHunger(player.getUserHunger() + 10);
-                    } else if (choice == 'd') {
+                    }
+                    else if(choice == 'd'){
                         playDrums();
-                    } else {
+                    }
+                    else{
                         choice = errorHandling();
                     }
                     player.displayStatus();

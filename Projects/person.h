@@ -6,7 +6,7 @@
 using namespace std;
 
 // Base class Player to manage health
-class Player {
+class Player{
 protected:
     int health; // Shared variable for all players
 
@@ -19,7 +19,7 @@ public:
 };
 
 // GameStats class to manage hunger and oxygen
-class GameStats {
+class GameStats{
 private:
     int hunger;
     int oxygen;
@@ -37,7 +37,7 @@ public:
 };
 
 // UserStatus inherits from Player and contains GameStats
-class UserStatus : public Player {
+class UserStatus : public Player{
 private:
     GameStats stats; // UserStatus has a GameStats object
 
@@ -62,7 +62,7 @@ public:
 Function: displayStatus()
 Displays the user's stats.
 */
-void UserStatus::displayStatus() {
+void UserStatus::displayStatus(){
     cout << "***************************************" << endl;
     cout << "Game Stats: " << endl 
          << "Hunger = " << getUserHunger() 
@@ -79,19 +79,21 @@ bool UserStatus::makeChoice() {
     setUserHunger(getUserHunger() - 5);
     setUserOxygen(getUserOxygen() - 5);
 
-    if (getUserOxygen() == 45) {
+    if(getUserOxygen() == 45){
         cout << "You have 50 percent Oxygen left! Health now drops by 10." << endl;
-    } else if (getUserOxygen() <= 45) {
+    }
+    else if(getUserOxygen() <= 45){
         setUserHealth(getUserHealth() - 10);
     }
 
-    if (getUserHunger() == 35) {
+    if(getUserHunger() == 35){
         cout << "You have 40 percent Hunger left! Health now drops by 10." << endl;
-    } else if (getUserHunger() <= 35) {
+    }
+    else if(getUserHunger() <= 35){
         setUserHealth(getUserHealth() - 10);
     }
 
-    if (getUserHealth() == 0) {
+    if(getUserHealth() == 0){
         cout << "Your Health is too low. Darkness takes over...." << endl;
         return false;
     }

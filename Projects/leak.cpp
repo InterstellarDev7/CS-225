@@ -62,7 +62,8 @@ void fixLeak(){
             else{
                 cout << "You lost! Try one more time..." << endl;
             }
-        } catch(const string& error){
+        }
+        catch(const string& error){
             cout << error << endl;
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
