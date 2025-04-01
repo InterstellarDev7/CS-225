@@ -1,3 +1,6 @@
+#ifndef STARTUP_H 
+#define STARTUP_H 
+
 #include <iostream>
 #include <string>
 #include <thread>  // For sleep_for
@@ -26,5 +29,6 @@ void Start::displayStart(){
     <<"\nOxygen is slowly depleting… "<<endl;
     this_thread::sleep_for(chrono::seconds(8));
     cout<<"\nWith only 5 hours of time, you must complete your tasks. The fate of the mission, your life, and the ISS"
-    <<" are in your hands. Decide wisely, time is running out."<<endl;
+    <<" are in your hands. Decide wisely, time is running out.\n"<<endl;
 }
+#endif
