@@ -11,7 +11,7 @@
 #include "leak.h"
 using namespace std;
 
-void fixLeak() {
+void fixLeak(){
     cout << "To fix the leak, you need to complete the mini game!" << endl;
     cout << "Let's start the game!" << endl;
     cout << "\n*********Welcome to Rock, Scissors, Paper*********" << endl;
@@ -22,15 +22,15 @@ void fixLeak() {
     
     srand(time(0));
     
-    try {
-        while (true) {
+    try{
+        while (true){
             cout << "Enter your choice ('rock', 'scissors', or 'paper' => ";
             cin >> userC;
             
             const string ERROR = "ERROR: Invalid option. Try again...\n";
 
             // If user input wrong option, user can input again until it's valid
-            if (userC != "rock" && userC != "scissors" && userC != "paper") {
+            if(userC != "rock" && userC != "scissors" && userC != "paper"){
                 throw ERROR;
             }
     
@@ -41,11 +41,12 @@ void fixLeak() {
             cout << "Program choice => " << computerC <<endl<<endl;
     
             // if user and computer are tie, try again
-            if (userC == computerC) {
+            if(userC == computerC){
                 cout << "Tie!" << endl;
-            } else if ((userC == "rock" && computerC == "scissors") ||
+            }
+            else if((userC == "rock" && computerC == "scissors") ||
                     (userC == "scissors" && computerC == "paper") ||
-                    (userC == "paper" && computerC == "rock")) {
+                    (userC == "paper" && computerC == "rock")){
                 cout << "You won! Great job!" << endl;
                 cout << "You fixed the leak!" << endl;
                 cout << "      *****    " << endl;
@@ -56,11 +57,13 @@ void fixLeak() {
 				cout << "      *****    " << endl;
 				cout<<"\n";
                 return;
-            } else {
+            }
+            else{
                 cout << "You lost! Try one more time..." << endl;
             }
         }
-    } catch (const string& error) {
+    }
+    catch(const string& error){
         cout << error << endl;
         cin.clear();
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

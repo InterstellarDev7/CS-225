@@ -7,7 +7,7 @@
 #include <chrono>  // For duration
 using namespace std;
 
-class Start {
+class Start{
     private:
         string lastName;
     public:

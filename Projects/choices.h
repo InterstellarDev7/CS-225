@@ -26,7 +26,7 @@ class Choices{
         }
 
         /* Function to write a congratulations certificate to a file */
-    void writeCertificate() {
+    void writeCertificate(){
         ofstream outFile("Congratulations_Certificate.txt"); // Create and open a file
         if (outFile.is_open()) {
             outFile << "***************************************\n";
@@ -40,7 +40,8 @@ class Choices{
             outFile << "***************************************\n";
             outFile.close(); // Close the file
             cout << "Congratulations! A certificate has been written to 'Congratulations_Certificate.txt' file.\n";
-        } else {
+        }
+        else{
             cout << "Error: Unable to write the certificate to a file.\n";
         }
     }
@@ -52,7 +53,7 @@ class Choices{
         }
 
         /* Overloaded ++ operator */
-        void operator ++ () {
+        void operator ++ (){
             level++; // Increment level
         }
         
@@ -68,19 +69,25 @@ class Choices{
                             if(choice == 'a'){ // If the choice is to fix power
                                 fixPower(); // Call power mini game
                                 level++; // Increment level
-                            } else if(choice == 'b'){ // If the choice is to fix communications
+                            }
+                            else if(choice == 'b'){ // If the choice is to fix communications
                                 cout << "You can not fix communications without power yet!" << endl;
-                            } else if(choice == 'c'){ // If the choice is to fix leak
+                            }
+                            else if(choice == 'c'){ // If the choice is to fix leak
                                 cout << "You can not fix the leak yet!" << endl;
-                            } else if(choice == 'd'){ // If the choice is to sleep
+                            }
+                            else if(choice == 'd'){ // If the choice is to sleep
                                 sleep(); // Call sleep function
-                            } else if(choice == 'e'){ // If the choice is to eat food
+                            }
+                            else if(choice == 'e'){ // If the choice is to eat food
                                 eatFood(); // Call eat food function
                                 player.setUserHunger(player.getUserHunger() + 10);  // Increase hunger by 10
-                            } else if(choice == 'f'){ // If the choice is to read a book
+                            }
+                            else if(choice == 'f'){ // If the choice is to read a book
                                 readBook(); // Call read book function
                             }
-                        } else{ //Error handling
+                        }
+                        else{ //Error handling
                             choice = errorHandling();
                         }
                         player.displayStatus();
@@ -95,16 +102,21 @@ class Choices{
                                 cout << "You turn on the main power switch inside the ISS." << endl;
                                 startCommunicationMiniGame();// Call communications mini game
                                 level++;; // Increment level
-                            } else if(choice == 'b'){ // If the choice is to fix leak
+                            }
+                            else if(choice == 'b'){ // If the choice is to fix leak
                                 cout << "You can not fix the leak without communications!" << endl;
-                            } else if(choice == 'c'){ // If the choice is to scroll on YouTube
+                            }
+                            else if(choice == 'c'){ // If the choice is to scroll on YouTube
                                 scrollYouTube(); // Call scroll YouTube function
-                            } else if(choice == 'd'){ // If the choice is to listen to music
+                            }
+                            else if(choice == 'd'){ // If the choice is to listen to music
                                 listenMusic(); // Call listen music function
-                            } else if(choice == 'e'){ // If the choice is to watch a movie
+                            }
+                            else if(choice == 'e'){ // If the choice is to watch a movie
                                 watchMovie(); // Call watch movie function
                             }
-                        }else{ // Error handling
+                        }
+                        else{ // Error handling
                             choice = errorHandling();
                         }
                         player.displayStatus();
@@ -118,14 +130,18 @@ class Choices{
                             if(choice == 'a'){ // If the choice is to fix leak
                                 cout<<"You call JPL and they give you instructions on how to fix the leak."<<endl;
                                 level++;; // Increment level
-                            } else if(choice == 'b'){ // If the choice is to video call family
+                            }
+                            else if(choice == 'b'){ // If the choice is to video call family
                                 familyPicture(); // Call video call family function
-                            } else if(choice == 'c'){ // If the choice is to livestream on Twitch
+                            }
+                            else if(choice == 'c'){ // If the choice is to livestream on Twitch
                                 liveStream(); // Call livestream function
-                            } else if(choice == 'd'){ // If the choice is to post a tweet
+                            }
+                            else if(choice == 'd'){ // If the choice is to post a tweet
                                 tweet(); // Call tweet function
                             }
-                        }else{
+                        }
+                        else{
                             choice = errorHandling();
                         }
                         player.displayStatus();
@@ -141,20 +157,23 @@ class Choices{
                                 writeCertificate(); // Write the congratulations certificate
                                 cout << "You have successfully completed the game! Well done!" << endl;
                                 return; // END GAME
-                            } else if(choice == 'b'){ // If the choice is to make a TikTok
+                            }
+                            else if(choice == 'b'){ // If the choice is to make a TikTok
                                 makeTikTok(); // Call make TikTok function
-                            } else if(choice == 'c'){ // If the choice is to eat a victory meal
+                            }
+                            else if(choice == 'c'){ // If the choice is to eat a victory meal
                                 victoryMeal(); // Call eat victory meal function
                                 player.setUserHunger(player.getUserHunger() + 10);  // Increase hunger by 10
-                            } else if(choice == 'd'){ // If the choice is to play around with the wrench
+                            }
+                            else if(choice == 'd'){ // If the choice is to play around with the wrench
                                 playDrums(); // Call play with wrench function
                             }
-                        }else{
+                        }
+                        else{
                             choice = errorHandling();
                         }
                         player.displayStatus();
-                        break;
-                        
+                        break;   
                 } // End of switch statement
             } // End of while loop
         } // End of selectChoice() function

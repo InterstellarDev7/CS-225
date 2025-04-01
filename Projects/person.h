@@ -10,14 +10,14 @@
 #include <cstring>
 using namespace std;
 
-class UserStatus {
+class UserStatus{
 private:
     int userHunger;
     int userOxygen;
     int userHealth;
 
 public:
-    UserStatus(int hu, int ox, int he) : userHunger(hu), userOxygen(ox), userHealth(he) {} // Constructor sets initial values
+    UserStatus(int hu, int ox, int he) : userHunger(hu), userOxygen(ox), userHealth(he){} // Constructor sets initial values
 
     // Getter functions
     int getUserHunger() const { return userHunger; }
@@ -37,7 +37,7 @@ public:
 Function: displayStatus()
 This function is used to display the Game Stats for user to see
 */
-void UserStatus::displayStatus() {
+void UserStatus::displayStatus(){
     cout << "***************************************" << endl;
     cout << "Game Stats: " << endl << "Hunger = " << userHunger << "\nOxygen = " << userOxygen
          << "\nHealth = " << userHealth << endl;
@@ -52,23 +52,25 @@ Once Oxygen reaches or gets below 50, Health decreases by 15
 Once Hunger reaches or gets below 30, Hunger decreases by 10
 Once Health reaches zero (return false), game ends and user "dies".
 */
-bool UserStatus::makeChoice() {
+bool UserStatus::makeChoice(){
     userHunger = max(0, userHunger - 5); // Max keeps stats from going below zero, decreases by 2
     userOxygen = max(0, userOxygen - 5); // Max keeps stats from going below zero, decreases by 2
 
-    if (userOxygen == 45){
+    if(userOxygen == 45){
         cout<<"You have 50 percent Oxygen left! Health now drops by 10." << endl;
-    } else if (userOxygen <= 45) {
+    }
+    else if(userOxygen <= 45){
         userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 15
     }
 
-    if (userHunger == 35) {
+    if(userHunger == 35){
         cout << "You have 40 percent Hunger left! Health now drops by 10." << endl;
-    } else if(userHunger <= 35){ 
+    }
+    else if(userHunger <= 35){ 
         userHealth = max(0, userHealth - 10); // Max keeps stats from going below zero, decreases by 10
     }
 
-    if (userHealth == 0) {
+    if(userHealth == 0){
         displayStatus();
         cout << "Your Health is too low.\nYou can no longer move and darkness takes over..." << endl;
         return false; // No more health means no more choices can be made, game ends
