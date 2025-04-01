@@ -15,8 +15,13 @@ class Choices{
         int level = 1; // Level of the game
     public:
          /*person.h*/
-        Choices(UserStatus &player) {
-        player.displayStatus(); // Displays initial status values
+        Choices(UserStatus &player){
+            player.displayStatus(); // Displays initial status values
+        }
+
+        // Choices destructor
+        ~Choices(){
+            cout << "Congratulations, you fixed the ISS and are returning home!" << endl;
         }
         
         char errorHandling(){
