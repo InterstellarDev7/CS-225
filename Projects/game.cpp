@@ -14,7 +14,7 @@ int main(){
 
     /*choices.h*/
     Choices playerChoices(player);  // Pass the player to the Choices constructor
-    playerChoices.selectChoice(player);  // Calls the game loop for selecting actions
+    playerChoices.selectChoice();  // Calls the game loop for selecting actions
     
     return 0;
 }
