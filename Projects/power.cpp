@@ -77,21 +77,16 @@ void fixPower(){
 				}
 			}
 
-			cout << "You've used all your attempts... Power restoration failed...\n";
+			cout << "\nYou've used all your attempts... Power restoration failed...\n";
 			cout << "Oxygen is slowly depleting...\n";
 			cout << "You still need to fix the power." << endl;
+			cout << "Do you want to try again? (y / n) => ";
 			//Ask user if they want to retry
 			char choice;
+			cin >> choice;
 			while(true){
 				try{
-					cout << "Do you want to try again (y / n)? ";
-
-					if(!(cin >> choice)){
-						cin.clear();
-						cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-						throw MSG2;
-					}
-					
+				    
 				    choice = tolower(choice);
 				    
 					if(choice == 'n'){
