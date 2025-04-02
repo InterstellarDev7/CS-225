@@ -18,6 +18,7 @@ using namespace std;
     // Player eats food
     void eatFood(){
         cout << "Because of stress, you decide to eat 15 astronaut icecream :)" << endl;
+        cout << "But you better get back to work if you want to survive!" << endl;
     }
 
     // Player reads a book
