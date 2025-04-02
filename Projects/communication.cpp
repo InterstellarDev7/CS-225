@@ -13,7 +13,7 @@
 
 using namespace std;
 
-fixComms::fixComms() {
+FixComms::FixComms() {
     cout << "You decided to fix communications." << endl;
     cout << "To fix communications, you need to complete the mini-game! " << endl;
     cout << "Let's start the game!\n" << endl;
@@ -26,7 +26,7 @@ fixComms::fixComms() {
 /*
 This function resets the board, filling the board from 1-9 into each box.
 */
-void fixComms::resetBoard() {
+void FixComms::resetBoard() {
     int num = 1;
     for (int i = 0; i < 3; i++) {//Loop through rows
         for (int j = 0; j < 3; j++) {//Loop through columns
@@ -38,7 +38,7 @@ void fixComms::resetBoard() {
 /*
 This function displays the game board.
 */
-void fixComms::gameBoard() {
+void FixComms::gameBoard() {
     cout << "\nBoard Updated...\n";
     cout << "   |   |   " << endl;
     cout << " " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
@@ -55,7 +55,7 @@ void fixComms::gameBoard() {
 This function handles a player's move in the game by placing their symbol (X or O) 
 in the specified position if it's valid.
 */
-bool fixComms::playerMove(int move, char sym) {
+bool FixComms::playerMove(int move, char sym) {
     int row = (move - 1) / 3;//Calculate row index (1-3 = row 0, 4-6 = row 1, 7-9 = row 2 )
     int col = (move - 1) % 3;//Calculate column index
 
@@ -71,7 +71,7 @@ This function checks, rows/columns/diagonals for three symbols in a row/column/d
 This then will equal a win for either computer or player, returning true. If there are none then
 function returns false = no wins.
 */
-bool fixComms::checkWin(char sym) {
+bool FixComms::checkWin(char sym) {
     for (int i = 0; i < 3; i++) {
         if ((board[i][0] == sym && board[i][1] == sym && board[i][2] == sym) ||  //Rows
             (board[0][i] == sym && board[1][i] == sym && board[2][i] == sym)) {  //Columns
@@ -92,7 +92,7 @@ bool fixComms::checkWin(char sym) {
 This function goes through all the rows and columns checking to make sure there are no empty spaces, 
 if there are not and there are no wins then the game has come to a tie.
 */
-bool fixComms::checkTie() {
+bool FixComms::checkTie() {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (board[i][j] != 'X' && board[i][j] != 'O') {
@@ -107,7 +107,7 @@ bool fixComms::checkTie() {
 The "computer" keeps generating a random number until it has not chose a spot the player
 has already picked. Ensuring the computer places an O in an empty space.
 */
-void fixComms::computerMove() {
+void FixComms::computerMove() {
     srand(time(0));
     int move;
     do {
@@ -120,7 +120,7 @@ This function runs the game, taking player moves and checking for wins or ties, 
 moves and checking for wins or ties. The function continues to run until there are no more empty spaces or until
 there is a win.
 */
-void fixComms::playTicTacToe() {
+void FixComms::playTicTacToe() {
     while (true) { //Keeps playing until player wins
         resetBoard();//Reset the board
 
@@ -193,6 +193,6 @@ void fixComms::playTicTacToe() {
 }
 
 void startCommunicationMiniGame() {
-    fixComms comms;
+    FixComms comms;
     comms.playTicTacToe();
 }
