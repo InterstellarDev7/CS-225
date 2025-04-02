@@ -1,7 +1,7 @@
 #ifndef COMMUNICATION_H
 #define COMMUNICATION_H
 
-class FixComms{
+class fixComms{
     private:
         char board[3][3]; //creates a 3x3 array
         char player = 'X'; //sets player symbol
