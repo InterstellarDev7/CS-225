@@ -76,7 +76,7 @@ using namespace std;
 
     // Player makes a TikTok
     void makeTikTok(){
-        cout << "You decide to make a TikTok. You are now dancing to \"It's the Final Countdown." << endl;
+        cout << "You decide to make a TikTok. You are now dancing to \"It's the Final Countdown.\"" << endl;
         cout << "You are now feeling like a TikTok star but do you need to be reminded that you are still stuck in space..." << endl;
     }
 
