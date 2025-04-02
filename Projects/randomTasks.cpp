@@ -49,7 +49,7 @@ using namespace std;
 
 /* Functions to waste time after restoring communications*/
 
-    // Creates a picture of a 4 person family and a dog using asky art (with *s)
+    // Creates a picture of a 4 person family and a dog using stick figure art
     void familyPicture(){
         cout << "You video called your family: " << endl;
         cout << "     o     o     o     o    /\\_/\\ " << endl;

@@ -56,9 +56,10 @@ public:
         }
     }
 
-    /* Overloaded ++ operator */
-    void operator++(){
-        level++; // Increment level
+    /* Overloaded << operator for output of level*/
+    friend ostream &operator<<(ostream &os, const Choices &choices) {
+        os << "You just beat Level " << choices.level << "!" << endl;
+        return os;
     }
 
     /* Function to display and choose a choice */
@@ -72,6 +73,7 @@ public:
 
                     if(choice == 'a'){
                         fixPower();
+                        cout << *this;
                         level++;
                     }
                     else if(choice == 'b'){
@@ -105,6 +107,7 @@ public:
                     if(choice == 'a'){
                         cout << "You turn on the main power switch inside the ISS." << endl;
                         startCommunicationMiniGame();
+                        cout << *this;
                         level++;
                     }
                     else if(choice == 'b'){
@@ -133,6 +136,7 @@ public:
 
                     if(choice == 'a'){
                         cout << "You call JPL and they give you instructions on how to fix the leak." << endl;
+                        cout << *this;
                         level++;
                     }
                     else if(choice == 'b'){
@@ -159,6 +163,7 @@ public:
                     if(choice == 'a'){
                         fixLeak();
                         writeCertificate();
+                        cout << *this;
                         cout << "You have successfully completed the game! Well done!" << endl;
                         return; // END GAME
                     }
@@ -176,6 +181,7 @@ public:
                         choice = errorHandling();
                     }
                     this_thread::sleep_for(chrono::seconds(8));
+                    cout << *this;
                     player.displayStatus();
                     break;
             } // End of switch statement
