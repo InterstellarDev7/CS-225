@@ -13,7 +13,7 @@
 
 using namespace std;
 
-fixComms::fixComms() {
+FixComms::FixComms() {
     cout << "You decided to fix communications." << endl;
     cout << "To fix communications, you need to complete the mini-game! " << endl;
     cout << "Let's start the game!\n" << endl;
