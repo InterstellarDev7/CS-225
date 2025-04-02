@@ -8,65 +8,65 @@
 #include <cstdlib>
 #include <string>
 #include <limits>
+#include <algorithm> // For handling case-insensitive input
 #include "leak.h"
+
 using namespace std;
 
-void fixLeak(){
-    cout << "To fix the leak, you need to complete the mini game!" << endl;
+void fixLeak() {
+    cout << "To fix the leak, you need to complete the mini-game!" << endl;
     cout << "Let's start the game!" << endl;
-    cout << "*********Welcome to Rock, Scissors, Paper*********" << endl;
+    cout << "********* Welcome to Rock, Scissors, Paper *********" << endl;
     cout << "To fix the leak, you must win a game." << endl;
     cout << "**************************************************\n" << endl;
-    string threeChoice[3] = {"rock", "scissors", "paper"};
-    string userC;
-    string computerC;
-    
+
+    string choices[3] = {"rock", "scissors", "paper"};
+    string userChoice, computerChoice;
+
     srand(time(0));
-    
-    while (true){
-        try{
-            cout << "Enter your choice ('rock', 'scissors', or 'paper') => ";
-            cin >> userC;
-            
-            const string ERROR = "ERROR: Invalid option. Try again...\n";
+
+    while (true) {
+        try {
+            cout << "Enter your choice ('rock', 'scissors', or 'paper'): ";
+            cin >> userChoice;
+
+            // Convert user input to lowercase for case-insensitivity
+            transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
 
             // If user input wrong option, user can input again until it's valid
-            if(userC != "rock" && userC != "scissors" && userC != "paper"){
-                throw ERROR;
+            if (userChoice != "rock" && userChoice != "scissors" && userChoice != "paper") {
+                throw invalid_argument("ERROR: Invalid option. Please enter 'rock', 'scissors', or 'paper'.\n");
             }
-    
-            // random choice between rock, scissors, and paper
-            int randomChoice = rand() % 3;
-    
-            computerC = threeChoice[randomChoice];
-            cout << "Program choice => " << computerC <<endl<<endl;
-    
+
             // if user and computer are tie, try again
-            if(userC == computerC){
-                cout << "Tie!" << endl;
-            }
-            else if((userC == "rock" && computerC == "scissors") ||
-                    (userC == "scissors" && computerC == "paper") ||
-                    (userC == "paper" && computerC == "rock")){
+            int randomChoice = rand() % 3;
+            computerChoice = choices[randomChoice];
+            cout << "Computer choice => " << computerChoice << endl << endl;
+
+            // Check result
+            if (userChoice == computerChoice) {
+                cout << "Tie! Try again." << endl;
+            } else if ((userChoice == "rock" && computerChoice == "scissors") ||
+                       (userChoice == "scissors" && computerChoice == "paper") ||
+                       (userChoice == "paper" && computerChoice == "rock")) {
                 cout << "You won! Great job!" << endl;
                 cout << "You fixed the leak!" << endl;
                 cout << "      *****    " << endl;
-				cout << "    *       *  " << endl;
-				cout << "   *  LEAK   * " << endl;
-				cout << "   *  SEALED * " << endl;
-				cout << "    *       *  " << endl;
-				cout << "      *****    " << endl;
-				cout<<"\n";
-                return;
-            }
-            else{
-                cout << "You lost! Try one more time..." << endl;
+                cout << "    *       *  " << endl;
+                cout << "   *  LEAK   * " << endl;
+                cout << "   *  SEALED * " << endl;
+                cout << "    *       *  " << endl;
+                cout << "      *****    " << endl;
+                cout << "\n";
+                return;  // Exit function after winning
+            } else {
+                cout << "You lost! Try again..." << endl;
             }
         }
-        catch(const string& error){
-            cout << error << endl;
+        catch (const invalid_argument& e) {
+            cout << e.what(); 
             cin.clear();
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
 }
