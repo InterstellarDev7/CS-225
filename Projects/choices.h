@@ -10,7 +10,7 @@
 #include "person.h" // Include person.h to use UserStatus
 using namespace std;
 
-class Choices {
+class Choices{
 private:
     char choice; // Char for user choice option
     int level = 1; // Level of the game
@@ -57,7 +57,7 @@ public:
     }
 
     /* Overloaded << operator for output of level*/
-    friend ostream &operator<<(ostream &os, const Choices &choices) {
+    friend ostream &operator<<(ostream &os, const Choices &choices){
         os << "You just beat Level " << choices.level << "!" << endl;
         return os;
     }
